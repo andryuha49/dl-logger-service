@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "1d0d4164-1291-4723-9b1a-dd695884ffe4",
+		"name": "dl",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "logs",
+			"item": [
+				{
+					"name": "/logs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseApiUrl}}/api/v1/logs",
+							"host": [
+								"{{baseApiUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"logs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/odata/logs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseApiUrl}}/api/v1/odata/logs?$top=2",
+							"host": [
+								"{{baseApiUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"odata",
+								"logs"
+							],
+							"query": [
+								{
+									"key": "$top",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/logs/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseApiUrl}}/api/v1/logs/22",
+							"host": [
+								"{{baseApiUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"logs",
+								"22"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/logs",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"level\": \"fatal\",\n\t\"eventDate\": \"2020-02-02T02:02:02\",\n\t\"systemId\": \"AUTH\",\n\t\"userId\": \"1\",\n\t\"systemPid\": 1,\n\t\"requestIp\": \"1.1.1.1\",\n\t\"requestDeviceName\": \"TEST IOS\",\n\t\"requestOsName\": \"IOS\",\n\t\"requestOsVersion\": \"10\",\n\t\"message\": \"Fild to login\",\n\t\"details\": \"test details\",\n\t\"stack\": \"{\\\"id\\\": 1}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseApiUrl}}/api/v1/logs",
+							"host": [
+								"{{baseApiUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"logs"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
